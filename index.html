@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Bitmovin Player</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<!-- <meta http-equiv="refresh" content="0;url=https://tv-dev.vizzto.net" /> -->
+	<title>Bitmovin Demo</title>
+	<style>
+		html {
+			height: 100%;
+			width: 100%;
+		}
+
+		body {
+			margin: 0 30px;
+			height: 100%;
+			background-color: #415A74;
+		}
+
+		.main {
+			height: 100%;
+			overflow: auto;
+
+		}
+
+		#player-container {
+			height: 70%;
+		}
+
+		nav.navbar {
+			margin: 30px 0;
+			text-align: center;
+		}
+
+		nav.navbar a.nav-item {
+			color: white;
+			font-size: 20px;
+			margin: 0 10px;
+		}
+
+		#btn-refresh {
+			position: fixed;
+			bottom: 0;
+			right: 0;
+			color: white;
+			font-size: 20px;
+			margin: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="main">
+		<nav class="navbar nav-items">
+			<a class="nav-item" href="javascript:void(0);" data-title="SintelSemDRM">SintelSemDRM</a>
+			<a class="nav-item" href="javascript:void(0);" data-title="GreenZoneTrailer">GreenZoneTrailer</a>
+			<a class="nav-item" href="javascript:void(0);" data-title="MrPoppersPenguins">MrPoppersPenguins</a>
+			<a class="nav-item" href="javascript:void(0);" data-title="PlanetOfTheApes">PlanetOfTheApes</a>
+			<a class="nav-item" href="javascript:void(0);" data-title="Rio">Rio</a>
+			<a class="nav-item" href="javascript:void(0);" data-title="TheATeam">TheATeam</a>
+			<a class="nav-item" href="javascript:void(0);" data-title="WaterForElephants">WaterForElephants</a>
+			<a class="nav-item" href="javascript:void(0);" data-title="GuardiansOfTheGalaxy">GuardiansOfTheGalaxy</a>
+		</nav>
+
+		<div id="player-container"></div>
+		<a id="btn-refresh" href="javascript:window.location.reload(true)">Refresh page</a>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" type="text/javascript"></script>
+	<script src="https://bitmovin-a.akamaihd.net/bitmovin-player/stable/7/bitmovinplayer.js" type="text/javascript"></script>
+	<script src="js/sources.js" type="text/javascript"></script>
+	<script src="js/main.js" type="text/javascript"></script>
+</body>
+
+</html>
