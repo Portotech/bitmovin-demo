@@ -1,6 +1,6 @@
 var App = (function () {
 	'use strict';
-	
+
 	var BITMOVIN_LICENSE_KEY, player;
 
 	BITMOVIN_LICENSE_KEY = 'd44197e4-ca58-4b71-bce1-a918711216f6';
@@ -9,7 +9,7 @@ var App = (function () {
 		init: init
 	};
 
-	
+
 
 	function loadPlayer() {
 		player = bitmovin.player('player-container');
@@ -43,14 +43,22 @@ var App = (function () {
 	};
 
 	function addEventListeners() {
-		$('nav a.nav-item').on('click', handleNavItemClick);
+
+		document.querySelectorAll('nav a.nav-item').forEach(function (elm) {
+
+			elm.addEventListener('click', handleNavItemClick);
+		});
+
+		document.getElementById('btn-refresh').addEventListener('click', function () {
+			window.location.reload(true);
+		});
 	};
 
 	function handleNavItemClick(event) {
 		console.log(event);
 		var sourceName, source;
 		try {
-			sourceName = $(this).data('title');
+			sourceName = this.dataset['title'];
 			source = getSource(sourceName);
 
 			setSource(source);
